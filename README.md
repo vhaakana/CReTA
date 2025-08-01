@@ -25,4 +25,8 @@ If you edit this code, do not set more than one of the set {a1, a2, a3} to be 'p
 You may find some of these functions useful in other projects too, such as the helper functions in `tgread.py` and the `to_pitch_praat` function in `main.py`, which converts a sound into a `parselmouth.Pitch` object.
 
 ### Citation:
+If you use this algorithm in an academic publication, please cite:
+
+Haakana, V. & Jokinen, R. (2025). *CReTA – Creak Recognition via Tonal Analysis*. GitHub repository: https://github.com/vhaakana/CReTA
+
 Haakana, V. & Jokinen, R. (2025, April 24–25). “Presenting an Alternative Creak Detection Algorithm” [Poster presentation], _XXXVII Fonetiikan päivät_, Turku.
