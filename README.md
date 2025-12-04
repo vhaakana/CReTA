@@ -9,10 +9,12 @@ The parameters defined at the end of the `main.py` module (from the line `floors
 
 A great deal of this code was written by or in collaboration with ChatGPT.
 
+**UPDATE 4 December 2025: tgread dependency removed - the values returned by it were originally discarded. Therefore, you no longer need to download `tgread.py` to run this, but as it contains functions that may be useful for other projects, we decided to keep it available.**
+
 ### How to run
 
 To run this, you need to:
-1. Download both `main.py` and `tgread.py` and place them in the same folder.
+1. Download `main.py`.
 2. Install Python. We have tested this on [Python 3.9.9](https://www.python.org/downloads/release/python-399/) on Windows 10 and 11, but it might run on other versions too (definitely not < 3.6 though) and probably also on other operating systems.
 3. Install [PitchSqueezer](https://github.com/asuni/PitchSqueezer) and its dependencies.
 4. Install [Parselmouth](https://pypi.org/project/praat-parselmouth/) and its dependencies.
@@ -27,6 +29,6 @@ You may find some of these functions useful in other projects too, such as the h
 ### Citation:
 If you use this algorithm in an academic publication, please cite:
 
-Haakana, V. & Jokinen, R. (2025). *CReTA – Creak Recognition via Tonal Analysis*. GitHub repository: https://github.com/vhaakana/CReTA
+Haakana, Viljami & Jokinen, Reetta (2025). *CReTA – Creak Recognition via Tonal Analysis*. GitHub repository: https://github.com/vhaakana/CReTA
 
-Haakana, V. & Jokinen, R. (2025, April 24–25). “Presenting an Alternative Creak Detection Algorithm” [Poster presentation], _XXXVII Fonetiikan päivät_, Turku.
+Haakana, Viljami & Jokinen, Reetta (2025, April 24–25). “Presenting an Alternative Creak Detection Algorithm” [Poster presentation], _XXXVII Fonetiikan päivät_, Turku.
