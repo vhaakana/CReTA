@@ -19,7 +19,6 @@ import warnings
 import parselmouth
 from pitch_squeezer import track_pitch, f0_cwt
 from fractions import Fraction
-from tgread import read_tg
 
 if __name__ == '__main__':
 
@@ -551,15 +550,6 @@ def process_and_join(lst):
     return ' '.join(result)
 
 
-def find_wav_text(wav):
-    try:
-        txt = read_tg(wav[:-4] + '.TextGrid')[0]
-        return '"' + process_and_join([w[-1] for w in txt]) + '"'
-    except FileNotFoundError:
-        with open(wav[:-4] + '.txt', 'rt', encoding='utf-8') as k:
-            c = k.read()
-            return '"' + ' '.join(c[c.startswith('\ufeff'):].split()) + '"'
-
 def add_missing_intervals(intervals, nonmissing='n', missing=''): # chatgpt
     """
     Adds missing intervals and labels them with `missing`, while labeling existing intervals with `nonmissing`.
@@ -604,11 +594,6 @@ def generate_tg_string(wav, creaky_segments):
     except:
         pass
 
-    try:
-        text = find_wav_text(wav)
-    except FileNotFoundError:
-        text = '"<teksti>"'
-
     tg_start = r'''File type = "ooTextFile"
 Object class = "TextGrid"
 
@@ -622,7 +607,7 @@ item []:
         name = "creaks" 
         xmin = 0 
         xmax = {0}
-'''.format(duration, text)
+'''.format(duration)
     interval_values = add_missing_intervals(creaky_segments)
     #print(interval_values)
     if interval_values:
